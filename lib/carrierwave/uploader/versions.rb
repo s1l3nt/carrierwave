@@ -224,7 +224,7 @@ module CarrierWave
           file = sanitized_file if !cached?
           store_versions!(file, versions)
         else
-          cache! if !cached?
+          cache!(sanitized_file) if !cached?
           store!
         end
       end
